@@ -25,6 +25,7 @@
 
 namespace App\Http\Controllers\Table;
 
+use Illuminate\Support\Arr;
 use App\Models\Port;
 use LibreNMS\Config;
 use LibreNMS\Util\Html;
@@ -128,6 +129,6 @@ class CustomersController extends TableController
 
     private function getTypeStrings()
     {
-        return array_wrap(Config::get('customers_descr', ['cust']));
+        return Arr::wrap(Config::get('customers_descr', ['cust']));
     }
 }

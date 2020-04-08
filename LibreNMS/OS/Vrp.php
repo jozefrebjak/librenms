@@ -25,6 +25,7 @@
 
 namespace LibreNMS\OS;
 
+use Illuminate\Support\Str;
 use LibreNMS\Device\Processor;
 use LibreNMS\Interfaces\Discovery\ProcessorDiscovery;
 use LibreNMS\Interfaces\Polling\NacPolling;
@@ -68,7 +69,7 @@ class Vrp extends OS implements
                 $descr = $entry['hwEntityBomEnDesc'];
                 $usage = $entry['hwEntityCpuUsage'];
 
-                if (empty($descr) || str_contains($descr, 'No') || str_contains($usage, 'No')) {
+                if (empty($descr) || Str::contains($descr, 'No') || Str::contains($usage, 'No')) {
                     continue;
                 }
 
@@ -154,7 +155,7 @@ class Vrp extends OS implements
         $total_oids = array();
 
         $vapInfoTable = $this->getCacheTable('hwWlanVapInfoTable', 'HUAWEI-WLAN-VAP-MIB', 3);
-        
+
         foreach ($vapInfoTable as $a_index => $ap) {
             //Convert mac address (hh:hh:hh:hh:hh:hh) to dec OID (ddd.ddd.ddd.ddd.ddd.ddd)
             $a_index_oid = implode(".", array_map("hexdec", explode(":", $a_index)));

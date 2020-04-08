@@ -25,6 +25,7 @@
 
 namespace App\Http\Controllers\Select;
 
+use Illuminate\Support\Str;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use LibreNMS\Config;
@@ -56,7 +57,7 @@ class GraphAggregateController extends Controller
         // handle search
         if ($search = strtolower($request->get('term'))) {
             $types = array_filter($types, function ($type) use ($search) {
-                return !str_contains(strtolower($type), $search);
+                return ! Str::contains(strtolower($type), $search);
             });
         }
 

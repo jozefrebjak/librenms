@@ -25,6 +25,7 @@
 
 namespace App\Http\Controllers\Widgets;
 
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 
 class ImageController extends WidgetController
@@ -51,8 +52,8 @@ class ImageController extends WidgetController
         $data['image_url'] = str_replace(['@AUTO_HEIGHT@', '@AUTO_WIDTH@'], [$dimensions['y'], $dimensions['x']], $data['image_url']);
 
         // bust cache
-        if (str_contains($data['image_url'], '?')) {
-            $data['image_url'] .= '&' . mt_rand();
+        if (Str::contains($data['image_url'], '?')) {
+            $data['image_url'] .= '&'.mt_rand();
         } else {
             $data['image_url'] .= '?' . mt_rand();
         }
