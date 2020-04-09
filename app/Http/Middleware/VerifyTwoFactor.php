@@ -2,9 +2,9 @@
 
 namespace App\Http\Middleware;
 
-use Illuminate\Support\Str;
 use App\Models\UserPref;
 use Closure;
+use Illuminate\Support\Str;
 use LibreNMS\Config;
 
 class VerifyTwoFactor

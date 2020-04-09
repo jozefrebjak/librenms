@@ -25,11 +25,11 @@
 
 namespace App\Http\Controllers\Select;
 
-use Illuminate\Support\Str;
 use App\Http\Controllers\Controller;
 use App\Models\Device;
 use Illuminate\Http\Request;
 use Illuminate\Support\Collection;
+use Illuminate\Support\Str;
 use LibreNMS\Util\Graph;
 use LibreNMS\Util\StringHelpers;
 

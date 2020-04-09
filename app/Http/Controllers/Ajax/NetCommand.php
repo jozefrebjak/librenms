@@ -25,10 +25,10 @@
 
 namespace App\Http\Controllers\Ajax;
 
-use Illuminate\Support\Str;
 use App\Http\Controllers\Controller;
-use \LibreNMS\Config;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
+use LibreNMS\Config;
 use Symfony\Component\HttpFoundation\StreamedResponse;
 use Symfony\Component\Process\Process;
 

@@ -25,11 +25,11 @@
 
 namespace App\Http\Controllers\Widgets;
 
-use Illuminate\Support\Str;
 use App\Http\Controllers\Controller;
 use App\Models\DeviceGroup;
 use App\Models\UserWidget;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 use Illuminate\View\View;
 
 abstract class WidgetController extends Controller

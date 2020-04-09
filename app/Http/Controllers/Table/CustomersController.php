@@ -25,8 +25,8 @@
 
 namespace App\Http\Controllers\Table;
 
-use Illuminate\Support\Arr;
 use App\Models\Port;
+use Illuminate\Support\Arr;
 use LibreNMS\Config;
 use LibreNMS\Util\Html;
 use LibreNMS\Util\Url;
